@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
+import useLocalState from "./hooks/UseLocalState";
 
 // parent component which displays the form for adding
 // new todos as well as the list of saved todos.
@@ -9,15 +10,16 @@ import Todo from './Todo';
 function TodoList() {
 
     // list of todos
-    const [todos, setTodos] = useState([])
+    const [todos, setTodos] = useLocalState([])
 
     // function to add a new todo
     const addTodo = todo =>{
-
+        // if the todo is empty or if it contains a lot of spaces
         if(!todo.text || /^\s*$/.test(todo.text)){
             return
         }
 
+        // append the new todo to the list of todos
         const newTodos = [todo, ...todos]
 
         setTodos(newTodos)
