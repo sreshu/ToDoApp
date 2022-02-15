@@ -12,5 +12,4 @@ https://to-do-tasks-app.netlify.app/
 
 [Brian](https://github.com/briancodex/) , [Abdur](https://github.com/arkalim/)
 
-To Do - Local memory storage retention 
 
